@@ -1,0 +1,16 @@
+# Colors
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'ciaranm/inkpot'
+
+# Python
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+hook_add = 'let g:deoplete#enable_at_startup = 1'
+
