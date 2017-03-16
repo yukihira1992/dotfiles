@@ -66,16 +66,21 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
-autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 autocmd BufNewFile,BufRead *.html nnoremap <C-e> :!open %
 autocmd BufNewFile,BufRead *.py call PythonOptions()
+autocmd BufNewFile,BufRead *.rb call RubyOptions()
 let $PATH=$PATH.":~/.pyenv/shims/"
 
 function PythonOptions()
     set filetype=python
     nnoremap <C-e> :!python %
     PyenvActivate
+endfunction
+
+function RubyOptions()
+    set tabstop=2     
+    set shiftwidth=2  
+    set softtabstop=2 
 endfunction
 
 set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -177,6 +182,12 @@ NeoBundleLazy 'aklt/plantuml-syntax', {
     \   'filetypes':['uml', 'pu', 'plantuml']
     \ }}
 let g:plantuml_executable_script = "~/dotfiles/plantuml"
+
+" Graphviz
+NeoBundleLazy 'wannesm/wmgraphviz.vim', {
+    \ 'autoload': {
+    \   'filetypes':['dot']
+    \ }}
 
 call neobundle#end()
 
