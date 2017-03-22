@@ -8,12 +8,16 @@ fi
 # --------------------------------------
 # terminal color and prompt
 # --------------------------------------
-alias ls='/usr/local/bin/gls --color=auto'
-# eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.256dark)
-# eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-universal)
-# eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-dark)
-eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-light)
-export PS1='\[\e[0;33m\]\u \[\e[0;37m\]\t \w \[\e[0;31m\] $ \[\e[1;35m\]'
+if type gls > /dev/null 2>&1; then
+    alias ls='/usr/local/bin/gls --color=auto'
+fi
+if type gdircolors > /dev/null 2>&1; then
+    # eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.256dark)
+    # eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-universal)
+    # eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-dark)
+    eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-light)
+    export PS1='\[\e[0;33m\]\u \[\e[0;37m\]\t \w \[\e[0;31m\] $ \[\e[1;35m\]'
+fi
 
 # --------------------------------------
 # pyenv

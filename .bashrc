@@ -27,7 +27,9 @@ fi
 # --------------------------------------
 # brew-file
 # --------------------------------------
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-    source $(brew --prefix)/etc/brew-wrap
+if type brew > /dev/null 2>&1; then
+    if [ -f $(brew --prefix)/etc/brew-wrap ];then
+        source $(brew --prefix)/etc/brew-wrap
+    fi
 fi
 
