@@ -240,6 +240,13 @@ NeoBundleLazy 'wannesm/wmgraphviz.vim', {
     \   'filetypes':['dot']
     \ }}
 
+""" Ruby
+NeoBundle 'tpope/vim-rails'
+NeoBundleLazy 'tpope/vim-endwise', {
+    \ 'autoload': {
+    \   'filetypes':['ruby']
+    \ }}
+
 call neobundle#end()
 
 NeoBundleCheck
