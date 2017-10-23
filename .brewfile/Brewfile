@@ -1,0 +1,142 @@
+
+# tap repositories and their packages
+
+tap caskroom/cask
+cask android-studio
+cask avira-antivirus
+cask google-chrome
+cask haskell-platform
+cask jad
+cask java
+cask mactex
+cask obs
+cask pgadmin4
+cask postico
+cask sequel-pro
+cask skype
+cask slack
+cask vagrant-manager
+cask vagrant
+cask virtualbox
+cask vlc
+cask wireshark
+cask xquartz
+
+tap caskroom/fonts
+cask font-fontawesome
+
+tap caskroom/versions
+
+tap homebrew/binary
+
+tap homebrew/boneyard
+
+tap homebrew/core
+brew autoconf
+brew automake
+brew bash-completion
+brew binutils
+brew c-ares
+brew cmake
+brew coreutils
+brew cowsay
+brew ctags
+brew dbus
+brew dex2jar
+brew eralchemy
+brew ffmpeg
+brew fontconfig
+brew fortune
+brew freetype
+brew gcc
+brew gd
+brew gdbm
+brew geoip
+brew gettext
+brew ghc
+brew git
+brew glib
+brew gmp
+brew gnutls
+brew graphviz
+brew htop
+brew iftop
+brew iperf
+brew isl
+brew jemalloc
+brew jpeg
+brew lame
+brew libevent
+brew libffi
+brew libgcrypt
+brew libgpg-error
+brew libmpc
+brew libpng
+brew libtasn1
+brew libtermkey
+brew libtiff
+brew libtool
+brew libunistring
+brew libuv
+brew libvterm
+brew libyaml
+brew lzip
+brew mas
+brew mecab
+brew mecab-ipadic
+brew mercurial
+brew mitmproxy
+brew mpfr
+brew msgpack
+brew mysql
+brew neovim
+brew nettle
+brew openssl
+brew openssl@1.1
+brew p11-kit
+brew pandoc
+brew pcre
+brew perl
+brew pkg-config
+brew plantuml
+brew postgresql
+brew protobuf
+brew pyenv
+brew pyenv-virtualenv
+brew python
+brew python3
+brew qt
+brew readline
+brew reattach-to-user-namespace
+brew redis
+brew rename
+brew rmtrash
+brew ruby
+brew sqlite
+brew terraform
+brew terragrunt
+brew tmux
+brew unibilium
+brew utf8proc
+brew vim
+brew webp
+brew wget
+brew x264
+brew xvid
+brew xz
+
+tap homebrew/versions
+
+tap neovim/neovim
+
+tap rcmdnk/file
+brew brew-file
+
+# Other Homebrew packages
+brew pyenv-pip-rehash
+
+# App Store applications
+appstore 1127487414 Install macOS Sierra (12.0.49)
+appstore 409183694 Keynote (6.6.2)
+appstore 409203825 Numbers (3.6.2)
+appstore 497799835 Xcode (8.2.1)

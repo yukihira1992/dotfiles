@@ -1,8 +1,8 @@
 
 filetype on
 
-let g:email = "t.hirayama@bravesoft.co.jp"
-let g:username = "Takayuki Hirayama"
+let g:email = "1992.yukihira@gmail.com"
+let g:username = "yukihira1992"
 
 " Print the line number in front of each line.
 set number
@@ -132,6 +132,16 @@ set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
 " tag jump
 nnoremap <C-]> g<C-]>
 
+" split
+nnoremap <C-_> <C-W>s
+nnoremap <C-\> <C-W>v
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
+
 augroup auto_comment_off
   autocmd!
   autocmd BufEnter * setlocal formatoptions-=r
@@ -141,17 +151,18 @@ augroup END
 autocmd BufNewFile,BufRead *.html nnoremap <C-e> :!open %
 autocmd BufNewFile,BufRead *.py call PythonOptions()
 autocmd BufNewFile,BufRead *.rb call RubyOptions()
+autocmd BufNewFile,BufRead *.rake call RubyOptions()
 
 function PythonOptions()
-    set filetype=python
+    setlocal filetype=python
     nnoremap <C-e> :!python %
 endfunction
 
 function RubyOptions()
     nnoremap <C-e> :!ruby %
-    set tabstop=2
-    set shiftwidth=2
-    set softtabstop=2
+    setlocal tabstop=2
+    setlocal shiftwidth=2
+    setlocal softtabstop=2
 endfunction
 
 """ Settings of NeoBundle
@@ -195,6 +206,14 @@ NeoBundleLazy 'Shougo/unite.vim'
 NeoBundleLazy 'Shougo/neomru.vim'
 NeoBundleLazy 'itchyny/lightline.vim'
 
+""" Tmux
+NeoBundle 'christoomey/vim-tmux-navigator'
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+
 """ Ctags
 NeoBundleLazy 'soramugi/auto-ctags.vim'
 let g:auto_ctags_filetype_mode = 1
@@ -204,7 +223,7 @@ set tags+=tags;
 NeoBundle 'scrooloose/nerdtree'
 nnoremap <silent><C-t> :NERDTree<CR>
 autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """ HTML
 NeoBundleLazy 'mattn/emmet-vim', {
@@ -218,34 +237,30 @@ NeoBundleLazy 'mattn/emmet-vim', {
 "     \   'filetypes':['markdown']
 "     \ }}
 NeoBundleLazy 'kannokanno/previm', {
-    \ 'autoload': {
-    \   'filetypes':['markdown']
-    \ }}
+    \ 'autoload': { 'filetypes':['markdown', 'plantuml'] }
+    \}
 NeoBundleLazy 'tyru/open-browser.vim', {
-    \ 'autoload': {
-    \   'filetypes':['markdown']
-    \ }}
+    \ 'autoload': { 'filetypes':['markdown', 'plantuml'] }
+    \}
 let g:previm_open_cmd = 'open -a Safari'
+nnoremap <silent><Space><Space>p :PrevimOpen<CR>
 
 """ UML
 NeoBundleLazy 'aklt/plantuml-syntax', {
-    \ 'autoload': {
-    \   'filetypes':['uml', 'pu', 'plantuml']
-    \ }}
-let g:plantuml_executable_script = "~/dotfiles/plantuml"
+    \ 'autoload': { 'filetypes':['plantuml'] }
+    \ }
+let g:plantuml_executable_script = "~/dotfiles/bin/vim/plantuml"
 
 """ Graphviz
 NeoBundleLazy 'wannesm/wmgraphviz.vim', {
-    \ 'autoload': {
-    \   'filetypes':['dot']
-    \ }}
+    \ 'autoload': { 'filetypes':['dot'] }
+    \ }
 
 """ Ruby
 NeoBundle 'tpope/vim-rails'
 NeoBundleLazy 'tpope/vim-endwise', {
-    \ 'autoload': {
-    \   'filetypes':['ruby']
-    \ }}
+    \ 'autoload': { 'filetypes':['ruby'] }
+    \ }
 
 call neobundle#end()
 

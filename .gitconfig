@@ -1,0 +1,15 @@
+[core]
+    excludesfile = ~/.gitignore
+[color]
+    ui = auto
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
+[user]
+    name = yukihira1992
+    email = 1992.yukihira@gmail.com
+[github]
+    user = yukihira1992
+[merge "mergepbx"]
+    name = Xcode project files merger
+    driver = mergepbx %O %A %B

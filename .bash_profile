@@ -9,14 +9,14 @@ fi
 # terminal color and prompt
 # --------------------------------------
 if type gls > /dev/null 2>&1; then
-    alias ls='/usr/local/bin/gls --color=auto'
+    alias ls='/usr/local/bin/gls --color=auto -h'
 fi
 if type gdircolors > /dev/null 2>&1; then
     # eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.256dark)
     # eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-universal)
     # eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-dark)
     eval $(gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-light)
-    export PS1='\[\e[0;33m\]\u \[\e[0;37m\]\t \w \[\e[0;31m\] $ \[\e[1;35m\]'
+    export PS1='\[\e[0;37m\]\t \[\e[0;34m\]\w \[\e[0;31m\] $ \[\e[1;35m\]'
 fi
 
 # --------------------------------------
@@ -34,10 +34,8 @@ fi
 # --------------------------------------
 # anyenv
 # --------------------------------------
-if type anyenv > /dev/null 2>&1; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
-fi
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
 
 # --------------------------------------
 # unicode setting
@@ -49,7 +47,7 @@ export LESSCHARSET=utf-8
 # --------------------------------------
 # enable adb commands everywhere
 # --------------------------------------
-export PATH=$PATH:/Users/hirayamatakayuki/Library/Android/sdk/platform-tools/
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/
 
 # --------------------------------------
 # PostgreSQL
@@ -62,7 +60,7 @@ export PGDATA=/usr/local/var/postgres
 export XDG_CONFIG_HOME=~/dotfiles
 
 # --------------------------------------
-# plantuml buffer size
+# plantuml
 # --------------------------------------
 export PLANTUML_LIMIT_SIZE=8192
 

@@ -9,8 +9,9 @@ repo = 'ciaranm/inkpot'
 # Python
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+    let g:deoplete#enable_at_startup = 1
+'''
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
-hook_add = 'let g:deoplete#enable_at_startup = 1'
-

@@ -9,6 +9,9 @@ open-browser.vim
 plantuml-syntax
 previm
 unite.vim
+vim-endwise
+vim-rails
 vim-template
+vim-tmux-navigator
 vimproc
 wmgraphviz.vim

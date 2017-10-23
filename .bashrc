@@ -18,18 +18,18 @@ if type rmtrash > /dev/null 2>&1; then
 fi
 
 # --------------------------------------
-# weather report
-# --------------------------------------
-if type curl > /dev/null 2>&1; then
-    alias weather='curl -4 http://wttr.in/Tokyo'
-fi
-
-# --------------------------------------
 # brew-file
+#
+# Update Brewfile after used brew command
 # --------------------------------------
 if type brew > /dev/null 2>&1; then
     if [ -f $(brew --prefix)/etc/brew-wrap ];then
         source $(brew --prefix)/etc/brew-wrap
     fi
 fi
+
+# --------------------------------------
+# rgrep
+# --------------------------------------
+alias rgrep='grep -rnw . -e '
 
