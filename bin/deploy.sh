@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd ../
+cd `dirname $0`"/.."
+
 for file in .??*
 do
     [[ "$file" == ".DS_Store" ]] && continue

@@ -1,10 +1,10 @@
 [core]
-    excludesfile = ~/.gitignore
+	excludesfile = /Users/hirayamatakayuki/.gitignore
 [color]
     ui = auto
 [difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path =
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [user]
     name = yukihira1992
     email = 1992.yukihira@gmail.com
@@ -13,3 +13,6 @@
 [merge "mergepbx"]
     name = Xcode project files merger
     driver = mergepbx %O %A %B
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

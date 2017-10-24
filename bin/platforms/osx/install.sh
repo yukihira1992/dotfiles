@@ -4,11 +4,12 @@ echo "Install to OSX."
 
 # install Homebrew
 echo "Install homebrew."
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if !(type brew > /dev/null 2>&1); then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew tap caskroom/cask
+fi
 
 brew update
-
-brew tap caskroom/cask
 
 # install brew-file
 brew install rcmdnk/file/brew-file

@@ -1,5 +1,7 @@
 #! /bin/sh
 
+cd `dirname $0`
+
 if [ "$(uname)" == "Darwin" ]; then
     sh ./platforms/osx/install.sh
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then

@@ -8,7 +8,6 @@ cask google-chrome
 cask haskell-platform
 cask jad
 cask java
-cask mactex
 cask obs
 cask pgadmin4
 cask postico
