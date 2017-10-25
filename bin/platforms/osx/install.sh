@@ -2,6 +2,9 @@
 
 echo "Install to OSX."
 
+# install Xcode command line tools
+xcode-select --install
+
 # install Homebrew
 echo "Install homebrew."
 if !(type brew > /dev/null 2>&1); then

@@ -1,35 +1,6 @@
 
 # tap repositories and their packages
 
-tap caskroom/cask
-cask android-studio
-cask avira-antivirus
-cask google-chrome
-cask haskell-platform
-cask jad
-cask java
-cask obs
-cask pgadmin4
-cask postico
-cask sequel-pro
-cask skype
-cask slack
-cask vagrant-manager
-cask vagrant
-cask virtualbox
-cask vlc
-cask wireshark
-cask xquartz
-
-tap caskroom/fonts
-cask font-fontawesome
-
-tap caskroom/versions
-
-tap homebrew/binary
-
-tap homebrew/boneyard
-
 tap homebrew/core
 brew autoconf
 brew automake
@@ -124,7 +95,37 @@ brew x264
 brew xvid
 brew xz
 
+tap homebrew/binary
+
+tap homebrew/boneyard
+
 tap homebrew/versions
+
+tap caskroom/cask
+cask slack
+cask haskell-platform
+cask virtualbox
+cask vlc
+cask skype
+cask pgadmin4
+cask obs
+cask avira-antivirus
+cask jad
+cask vagrant
+cask android-studio
+cask sequel-pro
+cask wireshark
+cask vagrant-manager
+cask google-chrome
+cask postico
+cask xquartz
+cask java
+cask sourcetree
+
+tap caskroom/fonts
+cask font-fontawesome
+
+tap caskroom/versions
 
 tap neovim/neovim
 
