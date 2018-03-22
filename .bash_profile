@@ -43,13 +43,6 @@ export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
 # --------------------------------------
-# unicode setting
-# --------------------------------------
-export PATH=$PATH:/usr/local/bin
-export LANG=ja_JP.UTF-8
-export LESSCHARSET=utf-8
-
-# --------------------------------------
 # enable adb commands everywhere
 # --------------------------------------
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/

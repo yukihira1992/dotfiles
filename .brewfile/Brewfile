@@ -2,15 +2,19 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew ansible
+brew asciiquarium
 brew autoconf
 brew automake
 brew bash-completion
 brew binutils
 brew c-ares
 brew cmake
+brew cmatrix
 brew coreutils
 brew cowsay
 brew ctags
+brew curl
 brew dbus
 brew dex2jar
 brew eralchemy
@@ -30,9 +34,11 @@ brew gmp
 brew gnutls
 brew graphviz
 brew htop
+brew icu4c
 brew iftop
 brew iperf
 brew isl
+brew jansson
 brew jemalloc
 brew jpeg
 brew lame
@@ -49,6 +55,7 @@ brew libtool
 brew libunistring
 brew libuv
 brew libvterm
+brew libxml2
 brew libyaml
 brew lzip
 brew mas
@@ -61,6 +68,7 @@ brew msgpack
 brew mysql
 brew neovim
 brew nettle
+brew nkf
 brew openssl
 brew openssl@1.1
 brew p11-kit
@@ -82,11 +90,13 @@ brew redis
 brew rename
 brew rmtrash
 brew ruby
+brew screen
 brew sqlite
 brew terraform
 brew terragrunt
 brew tmux
 brew unibilium
+brew unixodbc
 brew utf8proc
 brew vim
 brew webp
@@ -94,19 +104,26 @@ brew wget
 brew x264
 brew xvid
 brew xz
+brew zlib
 
 tap homebrew/binary
 
 tap homebrew/boneyard
+
+tap homebrew/dupes
+
+tap homebrew/php
+brew php56
+brew php56-pthreads
 
 tap homebrew/versions
 
 tap caskroom/cask
 cask slack
 cask haskell-platform
-cask virtualbox
 cask vlc
 cask skype
+cask karabiner-elements
 cask pgadmin4
 cask obs
 cask avira-antivirus
@@ -121,9 +138,12 @@ cask postico
 cask xquartz
 cask java
 cask sourcetree
+cask pycharm
 
 tap caskroom/fonts
 cask font-fontawesome
+
+tap caskroom/versions
 
 tap caskroom/versions
 
@@ -134,6 +154,10 @@ brew brew-file
 
 # Other Homebrew packages
 brew pyenv-pip-rehash
+brew qt5
+
+# Cask applications
+cask https://raw.githubusercontent.com/caskroom/homebrew-cask/e511469d8d746f1d925084ec79e51e6626322cbd/Casks/virtualbox.rb
 
 # App Store applications
 appstore 1127487414 Install macOS Sierra (12.0.49)

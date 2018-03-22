@@ -243,6 +243,7 @@ NeoBundleLazy 'tyru/open-browser.vim', {
     \ 'autoload': { 'filetypes':['markdown', 'plantuml'] }
     \}
 let g:previm_open_cmd = 'open -a Safari'
+let g:previm_show_header = 0
 nnoremap <silent><Space><Space>p :PrevimOpen<CR>
 
 """ UML
