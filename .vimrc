@@ -1,7 +1,7 @@
 
 filetype on
 
-let g:email = "1992.yukihira@gmail.com"
+let g:email = "hirayama@cancerscan.jp"
 let g:username = "yukihira1992"
 
 " Print the line number in front of each line.
@@ -119,10 +119,8 @@ set wildmenu wildmode=list:longest,full
 " and a history of previous search patterns is remembered.
 set history=10000
 
-" Use visual bell instead of beeping.
+" Disable beep.
 set visualbell t_vb=
-
-" Not ring the bell (beep or screen flash) for error messages.
 set noerrorbells
 
 " This is a list of character encodings considered
