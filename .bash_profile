@@ -8,9 +8,7 @@ fi
 # --------------------------------------
 # terminal color and prompt
 # --------------------------------------
-if type gls > /dev/null 2>&1; then
-    alias ls='/usr/local/bin/gls --color=auto -h'
-fi
+alias ls='ls -G'
 export PS1='\u@\h:$(echo "\w" | sed -e "/^.\{20,\}$/s/^\(.\{10\}\).*\(.\{10\}\)$/\1...\2/")\$ '
 
 # --------------------------------------

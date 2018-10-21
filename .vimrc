@@ -146,23 +146,6 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-autocmd BufNewFile,BufRead *.html nnoremap <C-e> :!open %
-autocmd BufNewFile,BufRead *.py call PythonOptions()
-autocmd BufNewFile,BufRead *.rb call RubyOptions()
-autocmd BufNewFile,BufRead *.rake call RubyOptions()
-
-function PythonOptions()
-    setlocal filetype=python
-    nnoremap <C-e> :!python %
-endfunction
-
-function RubyOptions()
-    nnoremap <C-e> :!ruby %
-    setlocal tabstop=2
-    setlocal shiftwidth=2
-    setlocal softtabstop=2
-endfunction
-
 """ Settings of NeoBundle
 " Add path of NeoBundle
 set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -212,28 +195,11 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 
-""" Ctags
-NeoBundleLazy 'soramugi/auto-ctags.vim'
-let g:auto_ctags_filetype_mode = 1
-set tags+=tags;
-
 """ Directory Tree
 NeoBundle 'scrooloose/nerdtree'
 nnoremap <silent><C-t> :NERDTree<CR>
 autocmd vimenter * if !argc() | NERDTree | endif
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-""" HTML
-NeoBundleLazy 'mattn/emmet-vim', {
-    \ 'autoload': {
-    \   'filetypes':["html", "djangohtml"]
-    \ }}
-
-""" Markdown
-" NeoBundleLazy 'plasticboy/vim-markdown', {
-"     \ 'autoload': {
-"     \   'filetypes':['markdown']
-"     \ }}
 NeoBundleLazy 'kannokanno/previm', {
     \ 'autoload': { 'filetypes':['markdown', 'plantuml'] }
     \}
@@ -243,23 +209,6 @@ NeoBundleLazy 'tyru/open-browser.vim', {
 let g:previm_open_cmd = 'open -a Safari'
 let g:previm_show_header = 0
 nnoremap <silent><Space><Space>p :PrevimOpen<CR>
-
-""" UML
-NeoBundleLazy 'aklt/plantuml-syntax', {
-    \ 'autoload': { 'filetypes':['plantuml'] }
-    \ }
-let g:plantuml_executable_script = "~/dotfiles/bin/vim/plantuml"
-
-""" Graphviz
-NeoBundleLazy 'wannesm/wmgraphviz.vim', {
-    \ 'autoload': { 'filetypes':['dot'] }
-    \ }
-
-""" Ruby
-NeoBundle 'tpope/vim-rails'
-NeoBundleLazy 'tpope/vim-endwise', {
-    \ 'autoload': { 'filetypes':['ruby'] }
-    \ }
 
 call neobundle#end()
 

@@ -3,87 +3,52 @@
 
 tap homebrew/core
 brew autoconf
-brew awscli
-brew awslogs
-brew boot2docker
-brew circleci
 brew coreutils
-brew docker
-brew docker-compose
-brew docker-machine
-brew fontconfig
+brew fish
 brew fortune
-brew freetype
-brew gd
+brew fzf
 brew gdbm
-brew gettext
-brew graphviz
+brew ghc
+brew ghq
 brew htop
-brew jpeg
 brew libevent
-brew libidn2
-brew libpng
-brew libtiff
-brew libtool
-brew libunistring
 brew libyaml
 brew mas
-brew mecab
-brew mecab-ipadic
-brew mysql
-brew nkf
 brew openssl
+brew pcre2
 brew perl
 brew pkg-config
 brew pyenv
 brew python
-brew python@2
 brew readline
 brew reattach-to-user-namespace
-brew redis
 brew rmtrash
 brew ruby
 brew sqlite
-brew telnet
 brew terraform
-brew terragrunt
 brew tmux
 brew vim
-brew webp
-brew wget
 brew xz
 
 tap homebrew/boneyard
-
-tap homebrew/cask
-cask docker
-cask google-chrome
-cask jad
-cask java
-cask karabiner-elements
-cask kindle
-cask ngrok
-cask obs
-cask pgadmin4
-cask postico
-cask pycharm
-cask sequel-pro
-cask skype
-cask slack
-cask sourcetree
-cask vagrant
-cask vagrant-manager
-cask virtualbox
-cask vlc
-cask wireshark
-cask xquartz
 
 tap homebrew/cask-fonts
 cask font-fontawesome
 
 tap homebrew/cask-versions
 
-tap caskroom/cask
+tap homebrew/cask
+cask docker
+cask jad
+cask karabiner-elements
+cask ngrok
+cask pgadmin4
+cask pycharm
+cask skype
+cask sourcetree
+cask vagrant-manager
+cask vlc
+cask xquartz
 
 tap neovim/neovim
 
@@ -91,11 +56,20 @@ tap rcmdnk/file
 brew brew-file
 
 # Other Cask applications
-cask haskell-platform
+cask google-chrome
+cask java
+cask kindle
+cask obs
+cask postico
+cask sequel-pro
+cask slack
+cask vagrant
+cask virtualbox
+cask wireshark
 
 # App Store applications
-appstore 682658836 GarageBand (10.2.0)
+appstore 682658836 GarageBand (10.3.0)
 appstore 408981434 iMovie (10.1.9)
-appstore 409183694 Keynote (8.0.1)
-appstore 409203825 Numbers (5.0.1)
-appstore 409201541 Pages (7.0.1)
+appstore 409183694 Keynote (8.1)
+appstore 409203825 Numbers (5.1)
+appstore 409201541 Pages (7.1)
