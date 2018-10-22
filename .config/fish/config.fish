@@ -66,3 +66,4 @@ function tmux_auto_attach
 end
 
 tmux_auto_attach
+fish_vi_key_bindings
