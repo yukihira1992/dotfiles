@@ -4,7 +4,13 @@ end
 
 if has_command pyenv
     set -x PATH $HOME/.pyenv/shims $PATH
+    export PIPENV_VENV_IN_PROJECT=1
     eval (pyenv init - | source)
+end
+
+if has_command rbenv
+    set -x PATH $HOME/.rbenv/shims $PATH
+    eval (rbenv init - | source)
 end
 
 if has_command rmtrash
