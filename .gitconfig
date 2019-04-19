@@ -1,13 +1,13 @@
 [core]
-	excludesfile = /Users/takayuki/dotfiles/.gitignore
+    excludesfile = /Users/takayuki/dotfiles/.gitignore
 [color]
     ui = auto
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [user]
-	name = yukihira1992
-	email = hirayama@cancerscan.jp
+    name = yukihira1992
+    email = hirayama@cancerscan.jp
 [github]
     user = yukihira1992
 [merge "mergepbx"]
@@ -17,4 +17,9 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	template = /Users/takayuki/.stCommitMsg
+    template = /Users/takayuki/.stCommitMsg
+[filter "lfs"]
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f

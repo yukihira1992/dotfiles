@@ -1,5 +1,6 @@
 *~
 .DS_Store
 .idea/
-.config/fish/functions/
+.config/fish/
+.config/fisher/
 -gitattribute

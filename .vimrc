@@ -1,9 +1,6 @@
 
 filetype on
 
-let g:email = "hirayama@cancerscan.jp"
-let g:username = "yukihira1992"
-
 " Print the line number in front of each line.
 set number
 
@@ -45,6 +42,7 @@ set whichwrap=b,s,h,l,
 
 " Minimal number of screen lines to keep above and below the cursor.
 set scrolloff=4
+
 " The minimal number of screen columns to keep to the left and to the
 " right of the cursor if 'nowrap' is set.
 set sidescrolloff=16
@@ -54,6 +52,7 @@ set confirm
 
 " When on a buffer becomes hidden when it is |abandon|ed.
 set hidden
+
 " When a file has been detected to have been changed outside of Vim 
 " and it has not been changed inside of Vim, automatically read it again.
 set autoread
@@ -68,16 +67,21 @@ set noswapfile
 """ Settings of search
 " When there is a previous search pattern, highlight all its matches.
 set hlsearch
+
 " While typing a search command, show where the pattern,
 " as it was typed so far, matches.
 set incsearch
+
 " If the 'ignorecase' option is on, the case of normal letters is ignored.
-set ignorecase 
+set ignorecase
+
 " Override the 'ignorecase' option if the search pattern contains
 " upper case characters.
 set smartcase
+
 " Searches wrap around the end of the file.
 set wrapscan
+
 " When on, the ":substitute" flag 'g' is default on.
 " This means that all matches in a line are substituted instead of one.
 set gdefault
@@ -86,24 +90,22 @@ set gdefault
 " Copy indent from current line when starting a new line (typing <CR>
 " in Insert mode or when using the "o" or "O" command).
 set autoindent
+
 " Do smart autoindenting when starting a new line.
-set smartindent   
+set smartindent
+
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 set expandtab
+
 " Number of spaces that a <Tab> in the file counts for.
 set tabstop=4
+
 " Number of spaces to use for each step of (auto)indent.
 set shiftwidth=4
+
 " Number of spaces that a <Tab> counts for while performing editing operations,
 " like inserting a <Tab> or using <BS>.
 set softtabstop=4
-
-" 'colorcolumn' is a comma separated list of screen columns that are
-" highlighted with ColorColumn |hl-ColorColumn|.
-if (exists('+colorcolumn'))
-  set colorcolumn=80
-  highlight ColorColumn ctermbg=9
-endif
 
 " Yunk to clipboard and paste from clipborad
 set clipboard=unnamed,unnamedplus
@@ -125,7 +127,7 @@ set noerrorbells
 
 " This is a list of character encodings considered
 " when starting to edit an existing file.
-set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
+set fileencodings=utf-8,sjis,cp932
 
 " tag jump
 nnoremap <C-]> g<C-]>
@@ -163,29 +165,7 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 
 """ Colorschemes 
-" NeoBundle 'altercation/vim-colors-solarized'
-" NeoBundle 'croaker/mustang-vim'
-" NeoBundle 'jeffreyiacono/vim-colors-wombat'
-" NeoBundle 'nanotech/jellybeans.vim'
-" NeoBundle 'vim-scripts/Lucius'
-" NeoBundle 'vim-scripts/Zenburn'
-" NeoBundle 'mrkn/mrkn256.vim'
-" NeoBundle 'jpo/vim-railscasts-theme'
-" NeoBundle 'therubymug/vim-pyte'
-" NeoBundle 'tomasr/molokai'
-" NeoBundle 'chriskempson/vim-tomorrow-theme'
-" NeoBundle 'sickill/vim-monokai'
-" NeoBundle 'w0ng/vim-hybrid'
-" NeoBundle 'sjl/badwolf'
 NeoBundle 'ciaranm/inkpot'
-" NeoBundle 'aereal/vim-colors-japanesque'
-" NeoBundle 'ujihisa/unite-colorscheme'
-
-""" Util
-NeoBundle 'aperezdc/vim-template'
-NeoBundleLazy 'Shougo/unite.vim'
-NeoBundleLazy 'Shougo/neomru.vim'
-NeoBundleLazy 'itchyny/lightline.vim'
 
 """ Tmux
 NeoBundle 'christoomey/vim-tmux-navigator'

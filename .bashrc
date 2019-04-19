@@ -16,15 +16,3 @@ fi
 if type rmtrash > /dev/null 2>&1; then
     alias rm='rmtrash'
 fi
-
-# --------------------------------------
-# brew-file
-#
-# Update Brewfile after used brew command
-# --------------------------------------
-if type brew > /dev/null 2>&1; then
-    if [ -f $(brew --prefix)/etc/brew-wrap ];then
-        source $(brew --prefix)/etc/brew-wrap
-    fi
-fi
-
