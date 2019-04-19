@@ -25,14 +25,3 @@ if type pyenv > /dev/null 2>&1; then
     export CFLAGS="-I$(brew --prefix openssl)/include"
     export LDFLAGS="-L$(brew --prefix openssl)/lib"
 fi
-
-# --------------------------------------
-# neovim config path
-# --------------------------------------
-export XDG_CONFIG_HOME=~/.config
-
-# --------------------------------------
-# plantuml
-# --------------------------------------
-export PLANTUML_LIMIT_SIZE=8192
-
