@@ -1,0 +1,47 @@
+""" Settings of NeoBundle
+" Add path of NeoBundle
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Initialize NeoBundle
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+    \ 'windows' : 'make -f make_mingw32.mak',
+    \ 'cygwin' : 'make -f make_cygwin.mak',
+    \ 'mac' : 'make -f make_mac.mak',
+    \ 'unix' : 'make -f make_unix.mak',
+  \ },
+\ }
+
+""" Colorschemes 
+NeoBundle 'ciaranm/inkpot'
+
+""" Tmux
+NeoBundle 'christoomey/vim-tmux-navigator'
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+
+""" Directory Tree
+NeoBundle 'scrooloose/nerdtree'
+nnoremap <silent><C-t> :NERDTree<CR>
+autocmd vimenter * if !argc() | NERDTree | endif
+
+NeoBundleLazy 'kannokanno/previm', {
+    \ 'autoload': { 'filetypes':['markdown', 'plantuml'] }
+    \}
+NeoBundleLazy 'tyru/open-browser.vim', {
+    \ 'autoload': { 'filetypes':['markdown', 'plantuml'] }
+    \}
+let g:previm_open_cmd = 'open -a Safari'
+let g:previm_show_header = 0
+nnoremap <silent><Space><Space>p :PrevimOpen<CR>
+
+call neobundle#end()
+
+NeoBundleCheck
+
+colorscheme inkpot
