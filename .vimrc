@@ -1,5 +1,5 @@
-
-filetype on
+filetype off
+filetype indent plugin off
 
 " Print the line number in front of each line.
 set number
@@ -148,6 +148,17 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
+""" Binary Editor
+" vim -b : Open file in xxd-format.
+augroup BinaryXXD
+  autocmd!
+  autocmd BufReadPost * if &binary | silent %!xxd -g 1
+  autocmd BufReadPost * set ft=xxd | endif
+  autocmd BufWritePre * if &binary | %!xxd -r
+  autocmd BufWritePost * if &binary | silent %!xxd -g 1
+  autocmd BufWritePost * set nomod | endif
+augroup END
+
 """ Settings of NeoBundle
 " Add path of NeoBundle
 set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -196,6 +207,7 @@ NeoBundleCheck
 
 colorscheme inkpot
 
+filetype on
 filetype indent plugin on
 syntax enable
 
