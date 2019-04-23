@@ -41,8 +41,7 @@ function fish_greeting
 end
 
 function fish_user_key_bindings
-    bind \cr 'peco_select_history (commandline -b)'
-    bind -M insert \c] peco_select_ghq_repository
+    bind -M insert \c] select_repository force_repaint
 end
 
 function is_tmux_running
