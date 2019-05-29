@@ -72,3 +72,19 @@ end
 
 tmux_auto_attach
 fish_vi_key_bindings
+
+alias qr="qrencode -t ANSI"
+
+function web
+    switch $argv
+        case github
+            set url "https://github.com"
+        case calendar
+            set url "https://calendar.google.com"
+        case fish
+            set url "https://fishshell.com/docs/current/"
+        case 'http*'
+            set url $argv
+    end
+    open $url
+end
