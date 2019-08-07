@@ -88,3 +88,9 @@ function web
     end
     open $url
 end
+
+function dirzip
+    set target (basename $argv[1])
+    zip -r {$target}.zip $target
+end
+
