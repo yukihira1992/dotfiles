@@ -1,34 +1,10 @@
+############
+# Functions
+############
+
 function has_command
     type $argv > /dev/null 2>&1
 end
-
-if has_command pyenv
-    set -x PATH $HOME/.pyenv/shims $PATH
-    export PIPENV_VENV_IN_PROJECT=1
-    eval (pyenv init - | source)
-end
-
-if has_command rbenv
-    set -x PATH $HOME/.rbenv/shims $PATH
-    eval (rbenv init - | source)
-end
-
-if has_command rmtrash
-    alias rm="rmtrash"
-end
-
-set -x LC_ALL ja_JP.UTF-8
-set -x LANG ja_JP.UTF-8
-
-#
-# https://github.com/oh-my-fish/theme-bobthefish
-#
-
-set -g theme_display_git yes
-set -g theme_display_git_dirty yes
-set -g theme_display_git_master_branch yes
-set -g theme_display_docker_machine yes
-set -g theme display_virtualenv yes
 
 function fish_greeting
     if has_command figlet
@@ -38,10 +14,6 @@ function fish_greeting
     else
         echo "Praying Run Don't give up And Stay on your way"
     end
-end
-
-function fish_user_key_bindings
-    bind -M insert \c] select_repository force_repaint
 end
 
 function is_tmux_running
@@ -70,11 +42,6 @@ function tmux_auto_attach
     end
 end
 
-tmux_auto_attach
-fish_vi_key_bindings
-
-alias qr="qrencode -t ANSI"
-
 function web
     switch $argv
         case github
@@ -93,4 +60,75 @@ function dirzip
     set target (basename $argv[1])
     zip -r {$target}.zip $target
 end
+
+
+############
+# Aliases
+############
+
+if has_command qrencode
+    alias qr="qrencode -t ANSI"
+end
+
+if has_command rmtrash
+    alias rm="rmtrash"
+end
+
+if has_command peco
+    alias gsw="git branch -a | peco | xargs git checkout"
+    alias gdl="git branch | peco | xargs git branch -D"
+    alias ghqcd="cd (ghq root)/(ghq list | peco)"
+    alias dockerexec="docker exec -it (docker ps --format '{{.Names}}' | peco) "
+end
+
+##############
+# Keybindings
+##############
+
+function fish_user_key_bindings
+    bind -M insert \c] ghqcd force_repaint
+end
+
+############
+# env
+############
+
+if has_command pyenv
+    set -x PATH $HOME/.pyenv/shims $PATH
+    export PIPENV_VENV_IN_PROJECT=1
+    eval (pyenv init - | source)
+end
+
+if has_command rbenv
+    set -x PATH $HOME/.rbenv/shims $PATH
+    eval (rbenv init - | source)
+end
+
+if has_command direnv
+    eval (direnv hook fish)
+end
+
+#
+# https://github.com/oh-my-fish/theme-bobthefish
+#
+
+set -g theme_display_git yes
+set -g theme_display_git_dirty yes
+set -g theme_display_git_master_branch yes
+set -g theme_display_docker_machine yes
+set -g theme display_virtualenv yes
+
+set -x LC_ALL ja_JP.UTF-8
+set -x LANG ja_JP.UTF-8
+set -U fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -U fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
+set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig"
+set -g fish_user_paths "/usr/local/opt/mysql-client/bin" $fish_user_paths
+set -x GOPATH $HOME/go
+set -x PATH $GOPATH/bin $PATH
+
+tmux_auto_attach
+fish_vi_key_bindings
 
