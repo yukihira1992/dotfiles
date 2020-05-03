@@ -42,20 +42,6 @@ function tmux_auto_attach
     end
 end
 
-function web
-    switch $argv
-        case github
-            set url "https://github.com"
-        case calendar
-            set url "https://calendar.google.com"
-        case fish
-            set url "https://fishshell.com/docs/current/"
-        case 'http*'
-            set url $argv
-    end
-    open $url
-end
-
 function dirzip
     set target (basename $argv[1])
     zip -r {$target}.zip $target
@@ -94,14 +80,8 @@ end
 ############
 
 if has_command pyenv
-    set -x PATH $HOME/.pyenv/shims $PATH
-    export PIPENV_VENV_IN_PROJECT=1
-    eval (pyenv init - | source)
-end
-
-if has_command rbenv
-    set -x PATH $HOME/.rbenv/shims $PATH
-    eval (rbenv init - | source)
+    set -x PIPENV_VENV_IN_PROJECT 1
+    pyenv init - --no-rehash | source
 end
 
 if has_command direnv
@@ -120,12 +100,6 @@ set -g theme display_virtualenv yes
 
 set -x LC_ALL ja_JP.UTF-8
 set -x LANG ja_JP.UTF-8
-set -U fish_user_paths "/usr/local/sbin" $fish_user_paths
-set -U fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
-set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
-set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig"
-set -g fish_user_paths "/usr/local/opt/mysql-client/bin" $fish_user_paths
 set -x GOPATH $HOME/go
 set -x PATH $GOPATH/bin $PATH
 
