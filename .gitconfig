@@ -1,21 +1,23 @@
-[core]
-    excludesfile = /Users/takayuki/dotfiles/.gitignore
-[color]
-    ui = auto
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 [user]
     name = yukihira1992
     email = hirayama@cancerscan.jp
 [github]
     user = yukihira1992
-[merge "mergepbx"]
-    name = Xcode project files merger
-    driver = mergepbx %O %A %B
+[core]
+    excludesfile = /Users/takayuki/dotfiles/.gitignore
+[color]
+    ui = auto
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [commit]
     template = /Users/takayuki/.stCommitMsg
 [filter "lfs"]
@@ -27,4 +29,3 @@
     log = diff-highlight | less
     show = diff-highlight | less
     diff= diff-highlight | less
-
