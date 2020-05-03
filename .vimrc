@@ -1,145 +1,109 @@
-filetype off
-filetype indent plugin off
+filetype plugin indent on
+syntax enable
 
-" Print the line number in front of each line.
+" 行番号を表示
 set number
 
-" The value of this option influences when the last window will have a
-"   status line:
-"       0: never
-"       1: only if there are at least two windows
-"       2: always
+" ステータス行を常に表示
 set laststatus=2
 
-" Number of screen lines to use for the command-line.
+" コマンドラインの行数を2行に変更（デフォルト1行）
 set cmdheight=2
 
-" When a bracket is inserted, briefly jump to the matching one.
-set showmatch
-
-" Tenths of a second to show the matching paren, when 'showmatch' is set.
-set matchtime=3
-
-" Minimal initial height of the help window when it is opened with the 
-" ":help" command.
-set helpheight=999
-
-" Same as :print, but display unprintable characters
-" with '^' and put $ after the line.
+" 空白文字の可視化
+"
+"   >-  : タブ
+"   <   : 行末
+"   -   : 行末のスペース
+"
 set list
-" Strings to use in 'list' mode and for the |:list| command.
-set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:<
+set listchars=tab:>-,eol:<,trail:-
 
-" number of colors
-set t_Co=256
-
-" Enable backspace in the insert mode.
+" インサートモードでのバックスペースの有効化
+"
+"   indent  : autoindent を超えてバックスペースを働かせる
+"   eol     : 改行を超えてバックスペースを働かせる
+"   start   : 挿入区間の始めでバックスペースを働かせるが CTRL-W と CTRL-U は挿入区間の始めでいったん止まる
+"
 set backspace=indent,eol,start
 
-" Allow specified keys that move the cursor left/right to move to the
-" previous/next line when the cursor is on the first/last character in the line.
-set whichwrap=b,s,h,l,
-
-" Minimal number of screen lines to keep above and below the cursor.
-set scrolloff=4
-
-" The minimal number of screen columns to keep to the left and to the
-" right of the cursor if 'nowrap' is set.
-set sidescrolloff=16
-
-" If you want to always use ":confirm", set the 'confirm' option.
+" 保存せずに終了する際に確認ダイアログを出す
 set confirm
 
-" When on a buffer becomes hidden when it is |abandon|ed.
+" ファイルが保存されていなくても別のファイルを開く
 set hidden
 
-" When a file has been detected to have been changed outside of Vim 
-" and it has not been changed inside of Vim, automatically read it again.
+" vimの外でのファイル変更を自動で読み込む
 set autoread
 
-" Not make a backup before overwriting a file.
+" ファイルの上書きでバックアップを作らない
 set nobackup
 
-" If you want to open a new buffer without creating a swap file for it,
-" use the |:noswapfile| modifier.
+" ファイル編集中のスワップファイルを作らない
 set noswapfile
 
-""" Settings of search
-" When there is a previous search pattern, highlight all its matches.
+" 検索対象をハイライトする
 set hlsearch
 
-" While typing a search command, show where the pattern,
-" as it was typed so far, matches.
+" インクリメンタルサーチを有効にする
 set incsearch
 
-" If the 'ignorecase' option is on, the case of normal letters is ignored.
+" 大文字小文字を区別せず検索する
 set ignorecase
 
-" Override the 'ignorecase' option if the search pattern contains
-" upper case characters.
+" 大文字と小文字が混在する場合に大文字小文字を区別する
 set smartcase
 
-" Searches wrap around the end of the file.
+" 最後尾まで検索後、先頭に戻る
 set wrapscan
 
-" When on, the ":substitute" flag 'g' is default on.
-" This means that all matches in a line are substituted instead of one.
+" 置換のグローバルオプションをデフォルトでオンにする
 set gdefault
 
-""" Settings of indent
-" Copy indent from current line when starting a new line (typing <CR>
-" in Insert mode or when using the "o" or "O" command).
+" 自動インデント
 set autoindent
 
-" Do smart autoindenting when starting a new line.
+" {と}でインデントの深さを決める
 set smartindent
 
-" In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
+" タブ文字をスペース4文字として扱う
+set shiftwidth=4
+set tabstop=4
 set expandtab
 
-" Number of spaces that a <Tab> in the file counts for.
-set tabstop=4
-
-" Number of spaces to use for each step of (auto)indent.
-set shiftwidth=4
-
-" Number of spaces that a <Tab> counts for while performing editing operations,
-" like inserting a <Tab> or using <BS>.
-set softtabstop=4
-
-" Yunk to clipboard and paste from clipborad
+" クリップボードとの連携を有効化
 set clipboard=unnamed,unnamedplus
 
-" When set, a forward slash is used when expanding file names.
-set shellslash
+" タブ補完を有効化
+set wildmenu
+" 最長マッチまで補完後に補完メニューを開く
+set wildmode=list:longest,full
 
-" When 'wildmenu' is on, command-line completion operates in an enhanced mode.
-" Completion mode that is used for the character specified with 'wildchar'.
-set wildmenu wildmode=list:longest,full
+" コマンドラインと検索パターンの履歴件数
+set history=100
 
-" A history of ":" commands,
-" and a history of previous search patterns is remembered.
-set history=10000
-
-" Disable beep.
+" ビープ音を無効化
 set visualbell t_vb=
 set noerrorbells
 
-" This is a list of character encodings considered
-" when starting to edit an existing file.
+" ファイル読み込み時のエンコーディング優先順位
+"
+"   1. UTF-8
+"   2. Shift-JIS
+"   3. CP932
+"
 set fileencodings=utf-8,sjis,cp932
 
-" tag jump
-nnoremap <C-]> g<C-]>
-
-" split
-nnoremap <C-_> <C-W>s
-nnoremap <C-\> <C-W>v
+" Ctrl + hjkl で画面移動
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" 下に画面分割
 set splitbelow
+
+" 右に画面分割
 set splitright
 
 augroup auto_comment_off
@@ -148,8 +112,7 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-""" Binary Editor
-" vim -b : Open file in xxd-format.
+" vim -b : バイナリモードでファイルを開く
 augroup BinaryXXD
   autocmd!
   autocmd BufReadPost * if &binary | silent %!xxd -g 1
@@ -159,12 +122,53 @@ augroup BinaryXXD
   autocmd BufWritePost * set nomod | endif
 augroup END
 
-""" Load Plugins
-if &loadplugins
-    source $HOME/.vimrc-plugins
+" vim-plugによるプラグイン管理
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.github.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-filetype on
-filetype indent plugin on
-syntax enable
+call plug#begin()
+" vim-plug本体
+Plug 'junegunn/vim-plug'
+
+" カラースキーム
+Plug 'ciaranm/inkpot'
+
+" ステータス表示の強化
+Plug 'vim-airline/vim-airline'
+
+" Tmuxのサポート
+Plug 'christoomey/vim-tmux-navigator'
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+
+" Gitのサポート
+Plug 'tpope/vim-fugitive'
+
+" Markdown, PlantUMLのプレビュー
+Plug 'kannokanno/previm', {'for': ['markdown', 'plantuml'] }
+Plug 'tyru/open-browser.vim', {'for': ['markdown', 'plantuml'] }
+let g:previm_open_cmd = 'open -a Safari'
+let g:previm_show_header = 0
+nnoremap <silent><Space><Space>p :PrevimOpen<CR>
+
+" プロジェクトのツリー表示
+Plug 'scrooloose/nerdtree'
+" Ctrl + T でツリーの表示を切替
+nnoremap <silent><C-t> :NERDTreeToggleVCS<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" ackの結果をQuickfixに表示する
+Plug 'mileszs/ack.vim'
+
+" 移動支援
+Plug 'easymotion/vim-easymotion'
+
+call plug#end()
+
+colorscheme inkpot
 

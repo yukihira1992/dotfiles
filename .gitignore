@@ -3,4 +3,5 @@
 .idea/
 .config/
 .venv/
+.vim/
 -gitattribute

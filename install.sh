@@ -9,9 +9,6 @@ do
     ln -s $PWD"/"$file $HOME
 done
 
-echo -e "\n##### Install neobundle. #####"
-git submodule update
-
 echo -e "\n##### Install Homebrew. #####"
 if ![ type brew > /dev/null 2>&1 ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
