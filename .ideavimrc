@@ -1,0 +1,76 @@
+" ステータス行を常に表示
+set laststatus=2
+
+" コマンドラインの行数を2行に変更（デフォルト1行）
+set cmdheight=2
+
+" 空白文字の可視化
+"
+"   >-  : タブ
+"   <   : 行末
+"   -   : 行末のスペース
+"
+set list
+set listchars=tab:>-,eol:<,trail:-
+
+" インサートモードでのバックスペースの有効化
+"
+"   indent  : autoindent を超えてバックスペースを働かせる
+"   eol     : 改行を超えてバックスペースを働かせる
+"   start   : 挿入区間の始めでバックスペースを働かせるが CTRL-W と CTRL-U は挿入区間の始めでいったん止まる
+"
+set backspace=indent,eol,start
+
+" 検索対象をハイライトする
+set hlsearch
+
+" インクリメンタルサーチを有効にする
+set incsearch
+
+" 大文字小文字を区別せず検索する
+set ignorecase
+
+" 大文字と小文字が混在する場合に大文字小文字を区別する
+set smartcase
+
+" 最後尾まで検索後、先頭に戻る
+set wrapscan
+
+" 置換のグローバルオプションをデフォルトでオンにする
+set gdefault
+
+" クリップボードとの連携を有効化
+set clipboard=unnamed,unnamedplus
+
+" タブ補完を有効化
+set wildmenu
+" 最長マッチまで補完後に補完メニューを開く
+set wildmode=list:longest,full
+
+" コマンドラインと検索パターンの履歴件数
+set history=100
+
+" ビープ音を無効化
+set visualbell t_vb=
+set noerrorbells
+
+" ファイル読み込み時のエンコーディング優先順位
+"
+"   1. UTF-8
+"   2. Shift-JIS
+"   3. CP932
+"
+set fileencodings=utf-8,sjis,cp932
+
+" Ctrl + hjkl で画面移動
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" 下に画面分割
+set splitbelow
+
+" 右に画面分割
+set splitright
+
