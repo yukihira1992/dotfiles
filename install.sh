@@ -5,7 +5,7 @@ for file in .??*
 do
     [[ "$file" == ".DS_Store" ]] && continue
     [[ "$file" == ".git" ]] && continue
-    [[ "$file" == ".gitmodule" ]] && continue
+    [[ "$file" == ".gitignore" ]] && continue
     ln -s $PWD"/"$file $HOME
 done
 
