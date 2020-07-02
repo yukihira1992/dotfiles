@@ -97,6 +97,7 @@ set -g theme_display_git_dirty yes
 set -g theme_display_git_master_branch yes
 set -g theme_display_docker_machine yes
 set -g theme display_virtualenv yes
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 set -x LC_ALL ja_JP.UTF-8
 set -x LANG ja_JP.UTF-8
