@@ -16,32 +16,6 @@ function fish_greeting
     end
 end
 
-function is_tmux_running
-    test ! -z "$TMUX"
-end
-
-function is_ssh_running
-    test ! -z "$SSH_CONNECTION"
-end
-
-function tmux_auto_attach
-    if is_tmux_running
-        return 0
-    end
-    if is_ssh_running
-        return 0
-    end
-
-    if has_command tmux; and status --is-interactive
-        if tmux has-session > /dev/null 2>&1; and tmux list-sessions | grep -qE '.*]$'
-            tmux attach-session
-        else
-            echo 'Tmux has no sessions'
-            tmux
-        end
-    end
-end
-
 function dirzip
     set target (basename $argv[1])
     zip -r {$target}.zip $target
@@ -97,13 +71,11 @@ set -g theme_display_git_dirty yes
 set -g theme_display_git_master_branch yes
 set -g theme_display_docker_machine yes
 set -g theme display_virtualenv yes
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 set -x LC_ALL ja_JP.UTF-8
 set -x LANG ja_JP.UTF-8
 set -x GOPATH $HOME/go
 set -x PATH $GOPATH/bin $PATH
 
-tmux_auto_attach
 fish_vi_key_bindings
 
