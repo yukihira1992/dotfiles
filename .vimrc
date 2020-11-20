@@ -173,6 +173,9 @@ Plug 'mileszs/ack.vim'
 " 移動支援
 Plug 'easymotion/vim-easymotion'
 
+" CSVのサポート
+Plug 'chrisbra/csv.vim'
+
 call plug#end()
 
 colorscheme jellyx
