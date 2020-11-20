@@ -2,18 +2,16 @@
 # Functions
 ############
 
-function has_command
-    type $argv > /dev/null 2>&1
+function init_tmux
+    if tmux ls | grep main:
+        tmux a -t main
+    else
+        tmux new -s main
+    end
 end
 
-function fish_greeting
-    if has_command figlet
-        for message in " Praing Run" " Don't give up" " And" " Stay on your way"
-            figlet -w120 -f ogre $message
-        end
-    else
-        echo "Praying Run Don't give up And Stay on your way"
-    end
+function has_command
+    type $argv > /dev/null 2>&1
 end
 
 function dirzip
