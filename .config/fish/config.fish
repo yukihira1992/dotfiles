@@ -19,6 +19,18 @@ function dirzip
     zip -r {$target}.zip $target
 end
 
+function _parse_hub_number
+    sed -E "s/[^0-9]*([0-9]*).*/\1/"
+end
+
+function issues
+    open (hub browse --url -- issues)/(hub issue --limit 50 | peco | _parse_hub_number)
+end
+
+function prs
+    hub pr show (hub pr list --limit 50 | peco | _parse_hub_number)
+end
+
 
 ############
 # Aliases
