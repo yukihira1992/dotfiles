@@ -155,11 +155,9 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 Plug 'tpope/vim-fugitive'
 
 " Markdown, PlantUMLのプレビュー
-Plug 'kannokanno/previm', {'for': ['markdown', 'plantuml'] }
-Plug 'tyru/open-browser.vim', {'for': ['markdown', 'plantuml'] }
+Plug 'previm/previm', {'for': ['markdown', 'plantuml'] }
 let g:previm_open_cmd = 'open -a Safari'
 let g:previm_show_header = 0
-nnoremap <silent><Space><Space>p :PrevimOpen<CR>
 
 " プロジェクトのツリー表示
 Plug 'scrooloose/nerdtree'
