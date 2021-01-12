@@ -8,6 +8,8 @@
 	<true/>
 	<key>AutoHideTmuxClientSession</key>
 	<true/>
+	<key>CloseBookmarksWindowAfterOpening</key>
+	<true/>
 	<key>Command</key>
 	<string></string>
 	<key>Custom Color Presets</key>
@@ -799,11 +801,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>RictyDiscordForPowerline-Regular 14</string>
+			<string>RobotoMonoForPowerline-Regular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>RictyDiscordForPowerline-Regular 16</string>
+			<string>RobotoMonoForPowerline-Regular 11</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
