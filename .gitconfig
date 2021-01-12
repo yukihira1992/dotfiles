@@ -1,31 +1,48 @@
-[user]
-    name = yukihira1992
-    email = hirayama@cancerscan.jp
-[github]
-    user = yukihira1992
-[core]
-    excludesfile = /Users/takayuki/dotfiles/.gitignore_global
 [color]
+    autocrlf = false
+    editor = vim
+    ignorecase = false
+    quotepath = false
     ui = auto
-[merge]
-    tool = vimdiff
-    conflictstyle = diff3
-[mergetool]
-    prompt = false
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
+[credential]
+    helper = osxkeychain
+
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[commit]
-    template = /Users/takayuki/.stCommitMsg
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
+
 [filter "lfs"]
     process = git-lfs filter-process
     required = true
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
+
+[github]
+    user = yukihira1992
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+
+[mergetool]
+    prompt = false
+
+[mergetool "sourcetree"]
+    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
+
 [pager]
     log = diff-highlight | less
     show = diff-highlight | less
     diff= diff-highlight | less
+
+[pull]
+    ff = only
+
+[push]
+    default = current
+
+[user]
+    name = yukihira1992
+    email = hirayama@cancerscan.jp
