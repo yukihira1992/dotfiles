@@ -44,8 +44,8 @@
     default = current
 
 [user]
-    name = yukihira1992
-    email = hirayama@cancerscan.jp
+    name = Takayuki Hirayama
+    email = hirayama@atama.plus
 [secrets]
     providers = git secrets --aws-provider
     patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
