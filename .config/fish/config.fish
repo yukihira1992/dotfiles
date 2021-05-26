@@ -65,7 +65,7 @@ end
 
 if has_command pyenv
     set -x PIPENV_VENV_IN_PROJECT 1
-    pyenv init - --no-rehash | source
+    pyenv init --path --no-rehash | source
 end
 
 if has_command direnv
