@@ -68,6 +68,10 @@ if has_command pyenv
     pyenv init --path --no-rehash | source
 end
 
+if has_command nodenv
+    eval (nodenv init - | source)
+end
+
 if has_command direnv
     eval (direnv hook fish)
 end
