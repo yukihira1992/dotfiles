@@ -40,8 +40,8 @@ if has_command qrencode
     alias qr="qrencode -t ANSI"
 end
 
-if has_command rmtrash
-    alias rm="rmtrash"
+if has_command trash
+    alias rm="trash"
 end
 
 if has_command peco
