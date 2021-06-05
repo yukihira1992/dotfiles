@@ -93,6 +93,3 @@ set -x PATH $GOPATH/bin $PATH
 
 fish_vi_key_bindings
 
-# set gcloud path
-source (brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
-
