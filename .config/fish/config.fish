@@ -51,6 +51,10 @@ if has_command peco
     alias dockerexec="docker exec -it (docker ps --format '{{.Names}}' | peco) "
 end
 
+if has_command brew
+    alias brew="set PATH /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin; /usr/local/bin/brew"
+end
+
 ##############
 # Keybindings
 ##############
@@ -64,16 +68,15 @@ end
 ############
 
 if has_command pyenv
-    set -x PIPENV_VENV_IN_PROJECT 1
     pyenv init --path --no-rehash | source
 end
 
 if has_command nodenv
-    eval (nodenv init - | source)
+    nodenv init - | source
 end
 
 if has_command direnv
-    eval (direnv hook fish)
+    direnv hook fish | source
 end
 
 #
@@ -90,6 +93,15 @@ set -x LC_ALL ja_JP.UTF-8
 set -x LANG ja_JP.UTF-8
 set -x GOPATH $HOME/go
 set -x PATH $GOPATH/bin $PATH
+
+set -x JAVA_HOME (/usr/libexec/java_home)
+set -x PATH $JAVA_HOME/bin $PATH
+set -x ANDROID_HOME ~/Library/Android/sdk/
+set -x PATH $ANDROID_HOME/platform-tools $PATH
+set -x PATH $ANDROID_HOME/emulator $PATH
+# set -x PATH $ANDROID_HOME/tools $PATH
+set -x GRADLE_HOME /Library/gradle/gradle-3.2
+set -x PATH $GRADLE_HOME/bin $PATH
 
 fish_vi_key_bindings
 
