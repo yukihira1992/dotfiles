@@ -67,14 +67,6 @@ end
 # env
 ############
 
-if has_command pyenv
-    pyenv init --path --no-rehash | source
-end
-
-if has_command nodenv
-    nodenv init - | source
-end
-
 if has_command direnv
     direnv hook fish | source
 end
@@ -96,12 +88,12 @@ set -x PATH $GOPATH/bin $PATH
 
 set -x JAVA_HOME (/usr/libexec/java_home)
 set -x PATH $JAVA_HOME/bin $PATH
-set -x ANDROID_HOME ~/Library/Android/sdk/
-set -x PATH $ANDROID_HOME/platform-tools $PATH
-set -x PATH $ANDROID_HOME/emulator $PATH
-# set -x PATH $ANDROID_HOME/tools $PATH
 set -x GRADLE_HOME /Library/gradle/gradle-3.2
 set -x PATH $GRADLE_HOME/bin $PATH
+set -x PATH $HOME/bin $PATH
 
 fish_vi_key_bindings
 
+
+source /Users/takayuki/.docker/init-fish.sh || true # Added by Docker Desktop
+mise activate fish | source

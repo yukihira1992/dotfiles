@@ -20,9 +20,6 @@
 [github]
     user = yukihira1992
 
-[init]
-    templateDir = /Users/takayuki/.git-templates/git-secrets
-
 [merge]
     tool = vimdiff
     conflictstyle = diff3
