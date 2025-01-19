@@ -19,17 +19,10 @@ $ git clone https://github.com/yukihira1992/dotfiles.git
 
 ```bash
 $ cd ~/dotfiles
-$ ./install.sh
+$ make setup-all
 ```
 
 ## Fish shell
-
-### Change fish as login shell
-```bash
-$ FISH_PATH=`which fish`
-$ sudo sh -c "echo $FISH_PATH >> /etc/shells"
-$ chsh -s $FISH_PATH
-```
 
 ### Change fish color
 

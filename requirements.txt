@@ -1,6 +1,0 @@
-awscli
-boto3
-ipython
-numpy
-pandas
-requests
