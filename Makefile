@@ -41,5 +41,5 @@ install-cask: install-homebrew
 .PHONY: install-homebrew
 install-homebrew:
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	eval "$$(/opt/homebrew/bin/brew shellenv)"
+	export PATH="$PATH:/opt/homebrew/bin";
 	which brew
